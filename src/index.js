@@ -27,6 +27,10 @@ function handleCakeReviews(reviews){
         const reviewLi = document.createElement('li')
         reviewLi.textContent = review;
         cakeReviews.append(reviewLi)
+        reviewLi.addEventListener('click', (e) => {
+            // console.log(e.target);
+            reviewLi.remove();
+        })
     })
 }
 
