@@ -32,12 +32,17 @@ function handleCakeReviews(reviews){
 
 const cakeList = document.getElementById('cake-list');
 //* render all the cake names in the <nav> Challenge 2
+
+
 function renderCakeList(cakes){
     cakeList.innerHTML = '';
     cakes.forEach(cake => {
         const cakeLi = document.createElement('li')
         cakeLi.textContent = cake.name;
         cakeList.append(cakeLi);
+        cakeLi.addEventListener('click', () => {
+            renderCake(cake)
+        })
     })
 }
 
@@ -54,3 +59,4 @@ reviewForm.addEventListener('submit', (e) => {
     cakeReviews.append(newLi)
     e.target.reset();
 })
+
